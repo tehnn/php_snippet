@@ -25,7 +25,7 @@
                 ln = position.coords.longitude;
                 $('#lat').val(lt);
                 $('#lng').val(ln);
-                $('#map-canvas').gmap3({
+                $(this).gmap3({
                     getaddress: {
                         latLng: new google.maps.LatLng(lt, ln),
                         callback: function (results) {
@@ -44,9 +44,9 @@
                 <input type="text" id="lat" name="lat" placeholder="ละติจูด" style="width: 300px"><br>        
                 <input type="text" id="lng" name="lng" placeholder="ลองจิจูด" style="width: 300px"><br>
                 <input type="text" id="addr" name="addr" placeholder="ที่ตั้ง" style="width: 300px"><br>
-                <button id="btn" type="button">MAP</button>
+                <button id="btn" type="button">พิกัด</button>
             </form>
-            <div id="map-canvas" style="display: none"></div>
+
         </div>
     </body>
 </html>
