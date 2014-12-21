@@ -41,9 +41,9 @@
     <body>
         <div>
             <form>
-                <input type="text" id="lat" name="lat" style="width: 300px"><br>        
-                <input type="text" id="lng" name="lng" style="width: 300px"><br>
-                <input type="text" id="addr" name="addr" style="width: 300px"><br>
+                <input type="text" id="lat" name="lat" placeholder="ละติจูด" style="width: 300px"><br>        
+                <input type="text" id="lng" name="lng" placeholder="ลองจิจูด" style="width: 300px"><br>
+                <input type="text" id="addr" name="addr" placeholder="ที่ตั้ง" style="width: 300px"><br>
                 <button id="btn" type="button">MAP</button>
             </form>
             <div id="map-canvas" style="display: none"></div>
