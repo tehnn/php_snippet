@@ -70,8 +70,8 @@
                 <input type="text" id="lat" name="lat" placeholder="ละติจูด" style="width: 300px"><br>        
                 <input type="text" id="lng" name="lng" placeholder="ลองจิจูด" style="width: 300px"><br>
                 <textarea id="addr" name="addr" placeholder="ที่ตั้ง" style="width: 300px"></textarea><br>
-                <button id="btn" type="button">พิกัด</button>
-                <button type="reset">เคลียร์</button>
+                <button id="btn" type="button">ประมวลผล</button>
+                
             </form>
 
         </div><br>
