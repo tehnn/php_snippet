@@ -7,8 +7,27 @@
         <script src="lib/gmap3.min.js"></script>
         <script>
             $(function () {
+                var mcenter = new google.maps.LatLng(16, 100);
                 $('#btn').click(function () {
+
+                    $('#map-canvas').gmap3({action: 'clear'});
+                    
                     getLocation();
+                });
+                $('#map-canvas').gmap3({
+                    map: {
+                        options: {
+                            center: mcenter,
+                            zoom: 6,
+                            mapTypeControl: true,
+                            mapTypeControlOptions: {
+                                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+                            },
+                            navigationControl: true,
+                            scrollwheel: true,
+                            streetViewControl: true
+                        }
+                    },
                 });
             });
 
@@ -25,14 +44,23 @@
                 ln = position.coords.longitude;
                 $('#lat').val(lt);
                 $('#lng').val(ln);
-                $(this).gmap3({
+                $('#map-canvas').gmap3({
                     getaddress: {
                         latLng: new google.maps.LatLng(lt, ln),
                         callback: function (results) {
                             content = results && results[1] ? results && results[1].formatted_address : "no address";
                             $('#addr').val(content);
+                            var map = this.gmap3("get");
+                            map.panTo(new google.maps.LatLng(lt, ln));
+
+                            $(this).gmap3({
+                                marker: {
+                                    latLng: results[0].geometry.location
+                                }
+                            });
+                            map.setZoom(12);
                         }
-                    }
+                    },
                 });
             }
         </script>
@@ -48,7 +76,8 @@
                 <button type="reset">เคลียร์</button>
             </form>
 
-        </div>
+        </div><br>
+        <div id="map-canvas" style="width: 500px;height: 400px; border: solid"></div>
     </body>
 </html>
 
