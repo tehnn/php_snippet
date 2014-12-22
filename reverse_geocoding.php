@@ -9,11 +9,9 @@
             $(function () {
                 var mcenter = new google.maps.LatLng(16, 100);
                 $('#btn').click(function () {
-
-                    $('#map-canvas').gmap3({action: 'clear'});
-                    
                     getLocation();
                 });
+                
                 $('#map-canvas').gmap3({
                     map: {
                         options: {
